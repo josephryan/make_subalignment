@@ -6,8 +6,9 @@ use JFR::Fasta;
 use Getopt::Long;
 use Data::Dumper;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 our $AUTHOR  = 'Joseph F. Ryan <joseph.ryan@whitney.ufl.edu>';
+our $PYTHON3 = 'python3';
 
 MAIN: {
     my $rh_o = process_opts();
@@ -105,7 +106,7 @@ sub get_subtree_taxa {
     $code =~ s/ZZZTREE/"$t"/;
     $code =~ s/ZZZPAT/"$p"/;
     $code =~ s/ZZZROOT/"$r"/;
-    my @out = qx/python3 -c '$code'/;
+    my @out = qx/$PYTHON3 -c '$code'/;
     foreach my $o (@out) {
         chomp $o;
         $o =~ s/'//g;
