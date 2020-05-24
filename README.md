@@ -4,6 +4,7 @@ This script takes a prefix of a subset of (our ingroup) taxa and will return an 
 ## REQUIREMENTS
 
 * There is an embedded python script that requires the dendropy library
+ NOTE: There is a $PYTHON3 variable at the top of the script.  The value of this should point to the python3 that has the dendropy library (either a value in the path or the full path)
 
 * JFR::Fasta is required https://github.com/josephryan/JFR-PerlModules
 
@@ -29,6 +30,12 @@ This script takes a prefix of a subset of (our ingroup) taxa and will return an 
     
 ### --help
     print usage info
+
+## TODO
+
+1. If Inline::Python is installed use it rather than a system call to python
+
+## COPYRIGHT / LICENSE
 
 Copyright (C) 2019 Joseph F. Ryan
 
